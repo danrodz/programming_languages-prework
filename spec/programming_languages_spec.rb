@@ -43,11 +43,6 @@ describe '#reformat_languages' do
     ruby.each { |k,v| expect(result[:ruby][k]).to eq(v) }
   end
 
-  it 'reformats javascript properly' do
-    expect(result[:javascript][:type]).to eq("interpreted")
-    [:oo, :functional].each { |v| expect(result[:javascript][:style]).to include(v) }
-  end
-
   it 'reformats python properly' do
     python = {:type => "interpreted", :style => [:oo]}
     python.each { |k, v| expect(result[:python][k]).to eq(v) }
@@ -71,6 +66,11 @@ describe '#reformat_languages' do
   it 'reformats scala properly' do
     scala = {:type => "compiled", :style => [:functional]}
     scala.each { |k, v| expect(result[:scala][k]).to eq(v) }
+  end
+  
+  it 'reformats javascript properly' do
+    expect(result[:javascript][:type]).to eq("interpreted")
+    [:oo, :functional].each { |v| expect(result[:javascript][:style]).to include(v) }
   end
 
 end
