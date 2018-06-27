@@ -4,12 +4,14 @@ def reformat_languages(languages)
   languages.each do |styles, langs|
     languages[styles].each do |lang, types|
       languages[styles][lang].each do |type, value|
-        if new_hash.has_key?(lang.to_s)
+        if !new_hash.include?(lang)
           new_hash[lang] = {
             type: value,
             style: []
           }
-        #end
+        else
+          new_hash[lang][:style].
+        end
       end
     end
   end
