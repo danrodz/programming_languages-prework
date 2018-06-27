@@ -8,7 +8,7 @@ def reformat_languages(languages)
           type: value,
           style: []
         }      
-        new_hash[lang][style] << styles
+        new_hash[lang][:style] << styles
       end
     end
   end
